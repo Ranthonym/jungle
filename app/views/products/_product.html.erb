@@ -1,5 +1,23 @@
+<style>
+.sold_out {
+background: red;
+color: white;
+opacity: 0.5;
+font-size: 12px;
+font-weight: 700;
+padding: 6px 12px;
+position: absolute;
+left: 0;
+top: 0;
+border-bottom-right-radius: 10px;
+}
+</style>
+
 <article class="product">
   <header>
+  <% if product.quantity == 0 %>
+  <span class="sold_out">SOLD OUT</span>
+  <% end %>
     <%= link_to product do %>
       <%= image_tag product.image.thumb, alt: product.name %>
       <h4><%= product.name %></h4>
@@ -20,4 +38,5 @@
   <aside class="price">
     <%= humanized_money_with_symbol product.price %>
   </aside>
+
 </article>
