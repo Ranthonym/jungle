@@ -2,13 +2,32 @@
 
 
 <header class="page-header">
-  <h1>Admin::Dashboard#show</h1>
-</header>
-<div> Total Products: 
- <%= @product_count %>
-</div>
-<div> Total categories: 
- <%= @category_count %>
-</div>
+   <h1>Admin Dashboard</h1> </header>
+  <div class="panel panel-default products">
+
+    <table class="table table-bordered">
+      <thead>
+    <tr>
+      <th scope="col" >Stat</th>
+      <th scope="col">Count</th>
+      <th scope="col">Link</th>
+    </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td>Total Products:</td>
+      <td> <%= @product_count %></td>
+      <td> <%= link_to 'All Products', [:admin, :products], class: 'btn btn-info' %></td>  
+    </tr>
+    <tr>
+      <td>Total categories:</td>
+      <td> <%= @category_count %></td>
+      <td><%= link_to 'All Categories', [:admin, :categories], class: 'btn btn-info' %></td>  
+    </tr>
+      </tbody>
+    </table>
+
+  </div>
 
 </section>
+
